@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using TiendaAPI.Models;
 
 namespace TiendaAPI.Repositories
@@ -5,10 +7,12 @@ namespace TiendaAPI.Repositories
     public interface IPresupuestoRepository
     {
         Task<List<Presupuestos>> GetAllAsync();
-        Task<Presupuestos> GetByIdAsync(int id);
         Task AddAsync(Presupuestos presupuesto);
-        Task UpdateAsync(int idPresupuesto, Presupuestos presupuesto);
-        Task DeleteAsync(int id);
+        Task<bool> AddProductoDetalleAsync(int idPresupuesto, int idProducto, int cantidad);
+       /*  Task<Presupuestos> GetByIdAsync(int id);
+
+          Task UpdateAsync(int idPresupuesto, Presupuestos presupuesto);
+          Task DeleteAsync(int id); */
     }
 }
 
